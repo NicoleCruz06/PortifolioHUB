@@ -24,7 +24,13 @@
             --card-shadow: 0 10px 30px rgba(42, 36, 56, 0.04);
             --border-radius: 16px;
         }
+        
 
+        header.header-rolou {
+            background-color: #FFCC00; /* O amarelo sutil do seu botão 'Enviar' */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
         /* Reset Geral */
         * {
             margin: 0;
@@ -963,7 +969,7 @@
         <div class="perfil-image-container">
             <div class="perfil-bg-wave"></div>
             <div class="perfil-img-frame">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600" alt="Nicole Viana Cruz">
+                <img src="foto-nicole.jpg" alt="Foto de Nicole Viana Cruz" class="foto-perfil">
                 <div class="location-tag">Brasília, Brasil</div>
             </div>
         </div>
@@ -1101,182 +1107,131 @@
     </section>
 
     <section id="projetos">
-        <div class="galeria-header">
-            <div>
-                <span class="badge-section">Portfólio</span>
-                <h2 class="serif-title">Galeria de <span>Projetos</span></h2>
-            </div>
-            <p>Uma seleção de projetos acadêmicos e profissionais que representam minha trajetória e habilidades técnicas.</p>
-        </div>
-
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <span class="project-year-badge">2026</span>
+        <div class="container">
+            <h2>Galeria de Projetos</h2>
+            <p>Uma seleção de projetos acadêmicos e profissionais que representam minha trajetória.</p>
+            
+            <div class="grid-projetos">
+                <div class="card-projeto">
+                    <span>2026</span>
+                    <h3>Análise Exploratória Inicial: Emendas Parlamentares</h3>
+                    <p>Análise exploratória de dados (EDA) utilizando Python e Pandas para mapear e tratar a distribuição inicial de emendas parlamentares brasileiras.</p>
+                    <div class="tags"><span>Python</span> <span>Pandas</span> <span>Dados Públicos</span></div>
+                    <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/01-analise-exploratoria/EDA_Pandas_Emendas-main/EDA_Pandas_Emendas-main" target="_blank">Ver no GitHub</a>
                 </div>
-                <div class="project-body">
-                    <h4 class="project-title">Análise de Impacto — Bolsa Família no DF</h4>
-                    <p class="project-desc">Projeto acadêmico de análise exploratória de dados do programa Bolsa Família no Distrito Federal. Visualizações interativas com Python e Plotly,...</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Pandas</span>
-                        <span class="project-tag">Plotly</span>
-                        <span class="project-tag">Dados Públicos</span>
-                    </div>
-                    <div class="project-footer">
-                        <a href="#" class="btn-project-link">📂 Github</a>
-                        <a href="#" class="btn-project-link">📊 Presentation</a>
-                    </div>
+    
+                <div class="card-projeto">
+                    <span>2026</span>
+                    <h3>Análise Exploratória Aprofundada: Emendas Parlamentares</h3>
+                    <p>Estudo analítico avançado com manipulação de DataFrames complexos, agrupamentos e agregações estatísticas sobre o orçamento público de emendas.</p>
+                    <div class="tags"><span>Python</span> <span>Pandas</span> <span>EDA Avançado</span></div>
+                    <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/02-analise-exploratoria/Pandas_exerc-cio2-master/Pandas_exerc-cio2-master" target="_blank">Ver no GitHub</a>
                 </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <span class="project-year-badge">2026</span>
+    
+                <div class="card-projeto">
+                    <span>2026</span>
+                    <h3>Análise Exploratória do Bolsa Família</h3>
+                    <p>Investigação de microdados socioeconômicos do programa Bolsa Família focado no impacto regional e na intersecção com políticas públicas.</p>
+                    <div class="tags"><span>Python</span> <span>Políticas Públicas</span> <span>Bolsa Família</span></div>
+                    <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/03-analise-bolsa-familia/EDA_bolsa_familia" target="_blank">Ver no GitHub</a>
                 </div>
-                <div class="project-body">
-                    <h4 class="project-title">Dashboard de Indicadores Sociais</h4>
-                    <p class="project-desc">Dashboard desenvolvido em Streamlit para monitoramento de indicadores sociais municipais. Integração com APIs de dados abertos do governo...</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Streamlit</span>
-                        <span class="project-tag">APIs</span>
-                        <span class="project-tag">Visualização</span>
-                    </div>
-                    <div class="project-footer">
-                        <a href="#" class="btn-project-link">📂 Github</a>
-                        <a href="#" class="btn-project-link">🌐 Demo</a>
-                    </div>
+    
+                <div class="card-projeto">
+                    <span>2026</span>
+                    <h3>Algoritmos de Repetição: Estrutura While</h3>
+                    <p>Desenvolvimento e resolução de problemas lógicos complexos de automação e validação de dados utilizando loops estruturados com While.</p>
+                    <div class="tags"><span>Python</span> <span>Lógica de Programação</span></div>
+                    <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/03-exercicios-while/Lista_3" target="_blank">Ver no GitHub</a>
                 </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <span class="project-year-badge">2026</span>
+    
+                <div class="card-projeto">
+                    <span>2026</span>
+                    <h3>Otimização de Fluxos: Estrutura For</h3>
+                    <p>Exercícios focados em iteração de sequências, indexação e eficiência de processamento de dados tabulares utilizando comandos For.</p>
+                    <div class="tags"><span>Python</span> <span>Fundamentos</span></div>
+                    <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/04-exercicios-for/Lista_4" target="_blank">Ver no GitHub</a>
                 </div>
-                <div class="project-body">
-                    <h4 class="project-title">Classificador de Textos Legislativos</h4>
-                    <p class="project-desc">Protótipo de NLP para classificação automática de proposições legislativas por tema. Utilização de técnicas básicas de processamento de linguagem...</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">scikit-learn</span>
-                        <span class="project-tag">NLP</span>
-                        <span class="project-tag">Dados Abertos</span>
-                    </div>
-                    <div class="project-footer">
-                        <a href="#" class="btn-project-link">📂 Github</a>
-                        <a href="#" class="btn-project-link">📄 Docs</a>
-                    </div>
+    
+                <div class="card-projeto">
+                    <span>2026</span>
+                    <h3>Manipulação de Estruturas de Dados</h3>
+                    <p>Implementação prática e organização de dados em estruturas fundamentais do Python como listas, tuplas, dicionários e conjuntos.</p>
+                    <div class="tags"><span>Python</span> <span>Estruturas de Dados</span></div>
+                    <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/05-exercicios-estruturas-dados/Lista_5" target="_blank">Ver no GitHub</a>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <span class="project-year-badge">2026</span>
-                </div>
-                <div class="project-body">
-                    <h4 class="project-title">Portfólio Pessoal — Nicole Viana Cruz</h4>
-                    <p class="project-desc">Site pessoal desenvolvido para apresentar minha trajetória acadêmica e profissional. Design responsivo e moderno com foco em usabilidade e acessibilidade, reunindo projetos, habilidades e recomendações.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">React</span>
-                        <span class="project-tag">TypeScript</span>
-                        <span class="project-tag">TailwindCSS</span>
-                        <span class="project-tag">Design</span>
-                    </div>
-                    <div class="project-footer">
-                        <a href="#" class="btn-project-link">🌐 Demo</a>
-                        <a href="#" class="btn-project-link">📂 Github</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <span class="project-year-badge">2026</span>
-                </div>
-                <div class="project-body">
-                    <h4 class="project-title">EDA com Pandas — Emendas Parlamentares</h4>
-                    <p class="project-desc">Análise exploratória de dados (EDA) aplicada a emendas parlamentares usando Python e Pandas. Limpeza, transformação e visualização de dados...</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Pandas</span>
-                        <span class="project-tag">EDA</span>
-                        <span class="project-tag">Dados Públicos</span>
-                    </div>
-                    <div class="project-footer">
-                        <a href="#" class="btn-project-link">📂 Github</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <span class="project-year-badge">2026</span>
-                </div>
-                <div class="project-body">
-                    <h4 class="project-title">Pandas — Exercício 2</h4>
-                    <p class="project-desc">Conjunto de exercícios práticos de manipulação de dados com Pandas em Python, incluindo filtragem, agrupamento, agregações e operações com DataFrames. Projeto acadêmico voltado para consolidação da biblioteca.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Pandas</span>
-                        <span class="project-tag">Exercício</span>
-                        <span class="project-tag">DataFrame</span>
-                    </div>
-                    <div class="project-footer">
-                        <a href="#" class="btn-project-link">📂 Github</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="center-btn-box">
-            <a href="https://github.com/NicoleCruz06" target="_blank" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">📂 Ver mais no GitHub</a>
         </div>
     </section>
 
     <section id="habilidades">
-        <div class="habilidades-center">
-            <span class="badge-section">Competências</span>
-            <h2 class="serif-title">Habilidades <span>Técnicas</span></h2>
-            <p>Um panorama das minhas principais competências, organizadas por área de atuação.</p>
+        <h2>Habilidades Técnicas</h2>
+        <p>Um panorama das minhas principais competências, organizadas por área de atuação.</p>
+    
+        <div class="abas-competencias">
+            <button class="aba-btn active" onclick="mudarAba('soft-skills')">Habilidades Interpessoais</button>
+            <button class="aba-btn" onclick="mudarAba('ciencia-dados')">Ciência de Dados</button>
+            <button class="aba-btn" onclick="mudarAba('politicas-publicas')">Políticas Públicas</button>
+            <button class="aba-btn" onclick="mudarAba('ferramentas')">Ferramentas</button>
         </div>
-
-        <div class="tabs-container">
-            <button class="tab-btn active" onclick="switchTab('dados')">Ciência de Dados</button>
-            <button class="tab-btn" onclick="switchTab('politicas')">Políticas Públicas</button>
-            <button class="tab-btn" onclick="switchTab('ferramentas')">Ferramentas</button>
-            <button class="tab-btn" onclick="switchTab('interpessoais')">Habilidades Interpessoais</button>
-        </div>
-
-        <div class="slider-wrapper">
-            <div class="skills-slider" id="skillsSlider">
-                <div class="skill-card">
-                    <div class="skill-icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                    </div>
-                    <h4>Visualização</h4>
+    
+        <div class="carrossel-container">
+            
+            <div id="soft-skills" class="conteudo-aba active">
+                <div class="carrossel-pagina" id="soft-p1">
+                    <div class="card-hab"><i>📢</i> <h4>Oratória</h4> </div>
+                    <div class="card-hab"><i>✍️</i> <h4>Escrita Analítica</h4> </div>
+                    <div class="card-hab"><i>🤝</i> <h4>Negociação</h4> </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
-                    </div>
-                    <h4>Estatística</h4>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                    </div>
-                    <h4>Álgebra Linear</h4>
+                <div class="carrossel-pagina hidden" id="soft-p2">
+                    <div class="card-hab"><i>🧠</i> <h4>Disciplina Autodidata</h4> </div>
+                    <div class="card-hab"><i>🌍</i> <h4>Colaboração Multidisciplinar</h4> </div>
+                    <div class="card-hab"><i>📊</i> <h4>Data Storytelling</h4> </div>
                 </div>
             </div>
-
-            <div class="slider-controls">
-                <div class="slider-arrow" onclick="slideLeft()">&larr;</div>
-                <div class="slider-dots">
-                    <div class="slider-dot active"></div>
-                    <div class="slider-dot"></div>
+    
+            <div id="ciencia-dados" class="conteudo-aba hidden">
+                <div class="carrossel-pagina" id="cd-p1">
+                    <div class="card-hab"><i>🐍</i> <h4>Python</h4> </div>
+                    <div class="card-hab"><i>🐼</i> <h4>Pandas</h4> </div>
+                    <div class="card-hab"><i>🗄️</i> <h4>SQL</h4> </div>
                 </div>
-                <div class="slider-arrow" onclick="slideRight()">&rarr;</div>
+                <div class="carrossel-pagina hidden" id="cd-p2">
+                    <div class="card-hab"><i>📐</i> <h4>Álgebra Linear</h4> </div>
+                    <div class="card-hab"><i>📉</i> <h4>Estatística</h4> </div>
+                    <div class="card-hab"><i>📊</i> <h4>Visualizações</h4> </div>
+                </div>
+            </div>
+    
+            <div id="politicas-publicas" class="conteudo-aba hidden">
+                <div class="carrossel-pagina" id="pp-p1">
+                    <div class="card-hab"><i>💰</i> <h4>Economia</h4> </div>
+                    <div class="card-hab"><i>⚖️</i> <h4>Direito</h4> </div>
+                    <div class="card-hab"><i>🏛️</i> <h4>Gestão Pública</h4> </div>
+                </div>
+                <div class="carrossel-pagina hidden" id="pp-p2">
+                    <div class="card-hab"><i>🗳️</i> <h4>Ciências Políticas</h4> </div>
+                    <div class="card-hab"><i>📜</i> <h4>História</h4> </div>
+                    <div class="card-hab"><i>🔬</i> <h4>Metodologia</h4> </div>
+                </div>
+            </div>
+    
+            <div id="ferramentas" class="conteudo-aba hidden">
+                <div class="carrossel-pagina" id="ferr-p1">
+                    <div class="card-hab"><i>💻</i> <h4>VS Code</h4> </div>
+                    <div class="card-hab"><i>🚀</i> <h4>Google Colab</h4> </div>
+                    <div class="card-hab"><i>📊</i> <h4>Power BI</h4> </div>
+                </div>
+                <div class="carrossel-pagina hidden" id="ferr-p2">
+                    <div class="card-hab"><i>🐙</i> <h4>Git/GitHub</h4> </div>
+                    <div class="card-hab"><i>📋</i> <h4>Excel/Sheets</h4> </div>
+                </div>
+            </div>
+    
+            <div class="controles-setas">
+                <button class="seta-btn" onclick="retrocederPagina()"> &lt; </button>
+                <span class="indicador-ponto active"></span>
+                <span class="indicador-ponto"></span>
+                <button class="seta-btn" onclick="avancarPagina()"> &gt; </button>
             </div>
         </div>
     </section>
@@ -1496,6 +1451,39 @@
             const dots = document.querySelectorAll('.slider-dot');
             dots[0].classList.add('active');
             if(dots[1]) dots[1].classList.remove('active');
+        }
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-rolou');
+            } else {
+                header.classList.remove('header-rolou');
+            }
+        });
+
+        function avancarPagina() {
+    // Procura as páginas ativas e alterna a visibilidade mudando a classe CSS 'hidden'
+            document.querySelectorAll('.conteudo-aba.active .carrossel-pagina').forEach((pag, index) => {
+            if(index === 0) pag.classList.add('hidden');
+            if(index === 1) pag.classList.remove('hidden');
+        });
+        atualizarPontos(1);
+        }
+
+        function retrocederPagina() {
+            document.querySelectorAll('.conteudo-aba.active .carrossel-pagina').forEach((pag, index) => {
+            if(index === 0) pag.classList.remove('hidden');
+            if(index === 1) pag.classList.add('hidden');
+        });
+        atualizarPontos(0);
+        }
+
+        function mudarAba(abaId) {
+            document.querySelectorAll('.conteudo-aba').forEach(aba => aba.classList.add('hidden'));
+            document.getElementById(abaId).classList.remove('hidden');
+            document.getElementById(abaId).classList.add('active');
+        retrocederPagina(); // Reseta para a primeira página ao mudar de categoria
         }
     </script>
 </body>
