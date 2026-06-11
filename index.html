@@ -1517,7 +1517,7 @@
               let todosOsProjetos = [];
 
               // Faz um loop por cada repositório que você listou ali em cima
-              for (const repo do meusRepositoriosTemas) {
+              for (const repo of meusRepositoriosTemas) {
                   const resposta = await fetch(`https://api.github.com/repos/${meuUsuarioGitHub}/${repo}/contents`);
             
                   if (!resposta.ok) continue; // Se der erro em algum, pula pro próximo
@@ -1663,6 +1663,36 @@ document.addEventListener('DOMContentLoaded', buscarProjetosGitHub);
             }
           });
         }
+
+        // VARIÁVEL GLOBAL PARA CONTROLAR A PÁGINA ATUAL DAS HABILIDADES
+        let paginaAtualHab = 0;
+
+        function mudarPagina(direcao) {
+          // 1. Seleciona apenas as páginas de habilidades da aba que está ativa no momento
+          const abaAtiva = document.querySelector('.conteudo-aba.ativa');
+          if (!abaAtiva) return; // Segurança: se não achar a aba ativa, para aqui
+  
+          const paginas = abaAtiva.querySelectorAll('.pagina-hab');
+          const pontos = document.querySelectorAll('.pontos .ponto');
+
+          // 2. Remove a classe 'ativa' da página e do ponto atual
+         paginas[paginaAtualHab]?.classList.remove('ativa');
+         pontos[paginaAtualHab]?.classList.remove('ativa');
+
+         // 3. Calcula a nova página (avança ou volta)
+         paginaAtualHab += direcao;
+
+         // 4. Cria o efeito "carrossel" (se passar da última, volta pra primeira e vice-versa)
+         if (paginaAtualHab >= paginas.length) {
+           paginaAtualHab = 0;
+         } else if (paginaAtualHab < 0) {
+         paginaAtualHab = paginas.length - 1;
+         }
+
+         // 5. Adiciona a classe 'ativa' na nova página e no novo ponto
+         paginas[paginaAtualHab]?.classList.add('ativa');
+         pontos[paginaAtualHab]?.classList.add('ativa');
+         }
     </script>
 </body>
 </html>
