@@ -24,7 +24,20 @@
             --card-shadow: 0 10px 30px rgba(42, 36, 56, 0.04);
             --border-radius: 16px;
         }
-        
+        .projetos-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; font-family: 'Inter', sans-serif; }
+        .grid-projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card-projeto { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #f0f0f0; }
+        .card-projeto:hover { transform: translateY(-5px); }
+        .projeto-imagem { height: 200px; background-color: #f3ebfc; position: relative; background-size: cover; background-position: center; }
+        .badge-ano { position: absolute; top: 15px; right: 15px; background: #ffffff; color: #333; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .projeto-conteudo { padding: 25px; }
+        .projeto-titulo { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; line-height: 1.3; }
+        .projeto-desc { font-size: 15px; color: #555; margin-bottom: 20px; line-height: 1.6; }
+        .projeto-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
+        .tag-roxa { background: #f4e8ff; color: #6b21a8; padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; }
+        .btn-github { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border: 1px solid #e5e5e5; border-radius: 8px; text-decoration: none; color: #333; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+        .btn-github:hover { background: #f9f9f9; border-color: #d1d1d1; }
+        .btn-github svg { width: 18px; height: 18px; }
 
         header.header-rolou {
             background-color: #FFCC00; /* O amarelo sutil do seu botão 'Enviar' */
@@ -51,6 +64,34 @@
             color: inherit;
             transition: all 0.3s ease;
         }
+
+        .hab-container { text-align: center; padding: 60px 20px; font-family: 'Inter', sans-serif; background-color: #faf9f6; }
+        .badge-comp { background: #f4e8ff; color: #6b21a8; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; display: inline-block; margin-bottom: 15px; letter-spacing: 1px; }
+        .hab-titulo { font-size: 42px; font-weight: 700; margin-bottom: 10px; color: #1a1a1a; }
+        .hab-titulo span { color: #FFB800; }
+        .hab-sub { color: #666; margin-bottom: 40px; font-size: 16px; }
+  
+        .menu-abas { display: inline-flex; flex-wrap: wrap; justify-content: center; background: #f0f0f0; padding: 6px; border-radius: 30px; margin-bottom: 50px; gap: 5px; }
+        .btn-aba { padding: 12px 24px; border-radius: 25px; cursor: pointer; border: none; background: transparent; font-weight: 600; color: #555; transition: all 0.3s ease; font-size: 15px; }
+        .btn-aba.ativa { background: #7c3aed; color: white; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25); }
+  
+        .grid-habs { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+        .card-hab { background: white; border: 1px solid #eaeaea; border-radius: 16px; width: 220px; padding: 40px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.2s; }
+        .card-hab:hover { transform: translateY(-5px); }
+        .icone-circulo { width: 70px; height: 70px; background: #fef3c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 28px; }
+        .nome-hab { font-weight: 700; color: #1a1a1a; font-size: 18px; }
+  
+        .paginacao { display: flex; align-items: center; justify-content: center; gap: 15px; }
+        .btn-seta { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #ddd; background: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .btn-seta:hover { background: #f5f5f5; }
+        .pontos { display: flex; gap: 8px; }
+        .ponto { width: 10px; height: 10px; border-radius: 50%; background: #ddd; }
+        .ponto.ativo { background: #7c3aed; width: 24px; border-radius: 10px; }
+  
+        .conteudo-aba { display: none; }
+        .conteudo-aba.ativa { display: block; }
+        .pagina-hab { display: none; }
+        .pagina-hab.ativa { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
         /* Cabeçalho / Navbar */
         header {
@@ -1106,133 +1147,205 @@
         </div>
     </section>
 
-    <section id="projetos">
-        <div class="container">
-            <h2>Galeria de Projetos</h2>
-            <p>Uma seleção de projetos acadêmicos e profissionais que representam minha trajetória.</p>
-            
-            <div class="grid-projetos">
-                <div class="card-projeto">
-                    <span>2026</span>
-                    <h3>Análise Exploratória Inicial: Emendas Parlamentares</h3>
-                    <p>Análise exploratória de dados (EDA) utilizando Python e Pandas para mapear e tratar a distribuição inicial de emendas parlamentares brasileiras.</p>
-                    <div class="tags"><span>Python</span> <span>Pandas</span> <span>Dados Públicos</span></div>
-                    <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/01-analise-exploratoria/EDA_Pandas_Emendas-main/EDA_Pandas_Emendas-main" target="_blank">Ver no GitHub</a>
-                </div>
-    
-                <div class="card-projeto">
-                    <span>2026</span>
-                    <h3>Análise Exploratória Aprofundada: Emendas Parlamentares</h3>
-                    <p>Estudo analítico avançado com manipulação de DataFrames complexos, agrupamentos e agregações estatísticas sobre o orçamento público de emendas.</p>
-                    <div class="tags"><span>Python</span> <span>Pandas</span> <span>EDA Avançado</span></div>
-                    <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/02-analise-exploratoria/Pandas_exerc-cio2-master/Pandas_exerc-cio2-master" target="_blank">Ver no GitHub</a>
-                </div>
-    
-                <div class="card-projeto">
-                    <span>2026</span>
-                    <h3>Análise Exploratória do Bolsa Família</h3>
-                    <p>Investigação de microdados socioeconômicos do programa Bolsa Família focado no impacto regional e na intersecção com políticas públicas.</p>
-                    <div class="tags"><span>Python</span> <span>Políticas Públicas</span> <span>Bolsa Família</span></div>
-                    <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/03-analise-bolsa-familia/EDA_bolsa_familia" target="_blank">Ver no GitHub</a>
-                </div>
-    
-                <div class="card-projeto">
-                    <span>2026</span>
-                    <h3>Algoritmos de Repetição: Estrutura While</h3>
-                    <p>Desenvolvimento e resolução de problemas lógicos complexos de automação e validação de dados utilizando loops estruturados com While.</p>
-                    <div class="tags"><span>Python</span> <span>Lógica de Programação</span></div>
-                    <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/03-exercicios-while/Lista_3" target="_blank">Ver no GitHub</a>
-                </div>
-    
-                <div class="card-projeto">
-                    <span>2026</span>
-                    <h3>Otimização de Fluxos: Estrutura For</h3>
-                    <p>Exercícios focados em iteração de sequências, indexação e eficiência de processamento de dados tabulares utilizando comandos For.</p>
-                    <div class="tags"><span>Python</span> <span>Fundamentos</span></div>
-                    <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/04-exercicios-for/Lista_4" target="_blank">Ver no GitHub</a>
-                </div>
-    
-                <div class="card-projeto">
-                    <span>2026</span>
-                    <h3>Manipulação de Estruturas de Dados</h3>
-                    <p>Implementação prática e organização de dados em estruturas fundamentais do Python como listas, tuplas, dicionários e conjuntos.</p>
-                    <div class="tags"><span>Python</span> <span>Estruturas de Dados</span></div>
-                    <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/05-exercicios-estruturas-dados/Lista_5" target="_blank">Ver no GitHub</a>
-                </div>
+    <section id="projetos" class="projetos-container">
+        <div style="text-align: left; margin-bottom: 20px;">
+          <span style="background: #f4e8ff; color: #6b21a8; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">PORTFÓLIO</span>
+          <h2 style="font-size: 42px; margin-top: 15px; color: #1a1a1a;">Galeria de <span style="color: #FFB800;">Projetos</span></h2>
+          <p style="color: #666; font-size: 16px; max-width: 600px; margin-top: 10px;">Uma seleção de projetos acadêmicos e profissionais que representam minha trajetória e habilidades técnicas.</p>
+        </div>
+      
+        <div class="grid-projetos">
+          <!-- Projeto 1 -->
+          <div class="card-projeto">
+            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800');">
+              <span class="badge-ano">2026</span>
             </div>
+            <div class="projeto-conteudo">
+              <h3 class="projeto-titulo">Análise Exploratória Inicial: Emendas Parlamentares</h3>
+              <p class="projeto-desc">Análise exploratória de dados (EDA) utilizando Python e Pandas para mapear e tratar a distribuição inicial de emendas parlamentares brasileiras.</p>
+              <div class="projeto-tags">
+                <span class="tag-roxa">Python</span> <span class="tag-roxa">Pandas</span> <span class="tag-roxa">Dados Públicos</span>
+              </div>
+              <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/01-analise-exploratoria/EDA_Pandas_Emendas-main/EDA_Pandas_Emendas-main" target="_blank" class="btn-github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+      
+          <!-- Projeto 2 -->
+          <div class="card-projeto">
+            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=800');">
+              <span class="badge-ano">2026</span>
+            </div>
+            <div class="projeto-conteudo">
+              <h3 class="projeto-titulo">Análise Exploratória Aprofundada: Emendas</h3>
+              <p class="projeto-desc">Estudo analítico avançado com manipulação de DataFrames complexos, agrupamentos e agregações estatísticas sobre o orçamento público.</p>
+              <div class="projeto-tags">
+                <span class="tag-roxa">Python</span> <span class="tag-roxa">Pandas</span> <span class="tag-roxa">EDA</span>
+              </div>
+              <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/02-analise-exploratoria/Pandas_exerc-cio2-master/Pandas_exerc-cio2-master" target="_blank" class="btn-github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+      
+          <!-- Projeto 3 -->
+          <div class="card-projeto">
+            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800');">
+              <span class="badge-ano">2026</span>
+            </div>
+            <div class="projeto-conteudo">
+              <h3 class="projeto-titulo">Análise Exploratória do Bolsa Família</h3>
+              <p class="projeto-desc">Investigação de microdados socioeconômicos do programa Bolsa Família focado no impacto regional e na intersecção com políticas públicas.</p>
+              <div class="projeto-tags">
+                <span class="tag-roxa">Python</span> <span class="tag-roxa">Políticas Públicas</span>
+              </div>
+              <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/03-analise-bolsa-familia/EDA_bolsa_familia" target="_blank" class="btn-github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+      
+          <!-- Projeto 4 -->
+          <div class="card-projeto">
+            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800');">
+              <span class="badge-ano">2026</span>
+            </div>
+            <div class="projeto-conteudo">
+              <h3 class="projeto-titulo">Algoritmos de Repetição: Estrutura While</h3>
+              <p class="projeto-desc">Desenvolvimento e resolução de problemas lógicos complexos de automação e validação de dados utilizando loops estruturados.</p>
+              <div class="projeto-tags">
+                <span class="tag-roxa">Python</span> <span class="tag-roxa">Lógica</span>
+              </div>
+              <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/03-exercicios-while/Lista_3" target="_blank" class="btn-github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+      
+          <!-- Projeto 5 -->
+          <div class="card-projeto">
+            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1526379095098-d400fd0bfce8?auto=format&fit=crop&q=80&w=800');">
+              <span class="badge-ano">2026</span>
+            </div>
+            <div class="projeto-conteudo">
+              <h3 class="projeto-titulo">Otimização de Fluxos: Estrutura For</h3>
+              <p class="projeto-desc">Exercícios focados em iteração de sequências, indexação e eficiência de processamento de dados tabulares utilizando comandos For.</p>
+              <div class="projeto-tags">
+                <span class="tag-roxa">Python</span> <span class="tag-roxa">Fundamentos</span>
+              </div>
+              <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/04-exercicios-for/Lista_4" target="_blank" class="btn-github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+      
+          <!-- Projeto 6 -->
+          <div class="card-projeto">
+            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800');">
+              <span class="badge-ano">2026</span>
+            </div>
+            <div class="projeto-conteudo">
+              <h3 class="projeto-titulo">Manipulação de Estruturas de Dados</h3>
+              <p class="projeto-desc">Implementação prática e organização de dados em estruturas fundamentais do Python como listas, tuplas, dicionários e conjuntos.</p>
+              <div class="projeto-tags">
+                <span class="tag-roxa">Python</span> <span class="tag-roxa">Estruturas</span>
+              </div>
+              <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/05-exercicios-estruturas-dados/Lista_5" target="_blank" class="btn-github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
         </div>
     </section>
 
-    <section id="habilidades">
-        <h2>Habilidades Técnicas</h2>
-        <p>Um panorama das minhas principais competências, organizadas por área de atuação.</p>
-    
-        <div class="abas-competencias">
-            <button class="aba-btn active" onclick="mudarAba('soft-skills')">Habilidades Interpessoais</button>
-            <button class="aba-btn" onclick="mudarAba('ciencia-dados')">Ciência de Dados</button>
-            <button class="aba-btn" onclick="mudarAba('politicas-publicas')">Políticas Públicas</button>
-            <button class="aba-btn" onclick="mudarAba('ferramentas')">Ferramentas</button>
+    <section id="habilidades" class="hab-container">
+        <span class="badge-comp">COMPETÊNCIAS</span>
+        <h2 class="hab-titulo">Habilidades <span>Técnicas</span></h2>
+        <p class="hab-sub">Um panorama das minhas principais competências, organizadas por área de atuação.</p>
+      
+        <!-- MENU DAS ABAS -->
+        <div class="menu-abas">
+          <button class="btn-aba ativa" onclick="mudarAba('dados', this)">Ciência de Dados</button>
+          <button class="btn-aba" onclick="mudarAba('politicas', this)">Políticas Públicas</button>
+          <button class="btn-aba" onclick="mudarAba('ferramentas', this)">Ferramentas</button>
+          <button class="btn-aba" onclick="mudarAba('soft', this)">Habilidades Interpessoais</button>
         </div>
-    
-        <div class="carrossel-container">
-            
-            <div id="soft-skills" class="conteudo-aba active">
-                <div class="carrossel-pagina" id="soft-p1">
-                    <div class="card-hab"><i>📢</i> <h4>Oratória</h4> </div>
-                    <div class="card-hab"><i>✍️</i> <h4>Escrita Analítica</h4> </div>
-                    <div class="card-hab"><i>🤝</i> <h4>Negociação</h4> </div>
-                </div>
-                <div class="carrossel-pagina hidden" id="soft-p2">
-                    <div class="card-hab"><i>🧠</i> <h4>Disciplina Autodidata</h4> </div>
-                    <div class="card-hab"><i>🌍</i> <h4>Colaboração Multidisciplinar</h4> </div>
-                    <div class="card-hab"><i>📊</i> <h4>Data Storytelling</h4> </div>
-                </div>
+      
+        <!-- CONTEÚDO DAS ABAS -->
+        <div class="area-conteudo">
+          
+          <!-- ABA: CIÊNCIA DE DADOS -->
+          <div id="dados" class="conteudo-aba ativa">
+            <div class="pagina-hab ativa" data-pagina="0">
+              <div class="card-hab"><div class="icone-circulo">🐍</div><h4 class="nome-hab">Python</h4></div>
+              <div class="card-hab"><div class="icone-circulo">🐼</div><h4 class="nome-hab">Pandas</h4></div>
+              <div class="card-hab"><div class="icone-circulo">🗄️</div><h4 class="nome-hab">SQL</h4></div>
             </div>
-    
-            <div id="ciencia-dados" class="conteudo-aba hidden">
-                <div class="carrossel-pagina" id="cd-p1">
-                    <div class="card-hab"><i>🐍</i> <h4>Python</h4> </div>
-                    <div class="card-hab"><i>🐼</i> <h4>Pandas</h4> </div>
-                    <div class="card-hab"><i>🗄️</i> <h4>SQL</h4> </div>
-                </div>
-                <div class="carrossel-pagina hidden" id="cd-p2">
-                    <div class="card-hab"><i>📐</i> <h4>Álgebra Linear</h4> </div>
-                    <div class="card-hab"><i>📉</i> <h4>Estatística</h4> </div>
-                    <div class="card-hab"><i>📊</i> <h4>Visualizações</h4> </div>
-                </div>
+            <div class="pagina-hab" data-pagina="1">
+              <div class="card-hab"><div class="icone-circulo">📐</div><h4 class="nome-hab">Álgebra Linear</h4></div>
+              <div class="card-hab"><div class="icone-circulo">📉</div><h4 class="nome-hab">Estatística</h4></div>
+              <div class="card-hab"><div class="icone-circulo">📊</div><h4 class="nome-hab">Visualizações</h4></div>
             </div>
-    
-            <div id="politicas-publicas" class="conteudo-aba hidden">
-                <div class="carrossel-pagina" id="pp-p1">
-                    <div class="card-hab"><i>💰</i> <h4>Economia</h4> </div>
-                    <div class="card-hab"><i>⚖️</i> <h4>Direito</h4> </div>
-                    <div class="card-hab"><i>🏛️</i> <h4>Gestão Pública</h4> </div>
-                </div>
-                <div class="carrossel-pagina hidden" id="pp-p2">
-                    <div class="card-hab"><i>🗳️</i> <h4>Ciências Políticas</h4> </div>
-                    <div class="card-hab"><i>📜</i> <h4>História</h4> </div>
-                    <div class="card-hab"><i>🔬</i> <h4>Metodologia</h4> </div>
-                </div>
+          </div>
+      
+          <!-- ABA: POLÍTICAS PÚBLICAS -->
+          <div id="politicas" class="conteudo-aba">
+            <div class="pagina-hab ativa" data-pagina="0">
+              <div class="card-hab"><div class="icone-circulo">💰</div><h4 class="nome-hab">Economia</h4></div>
+              <div class="card-hab"><div class="icone-circulo">⚖️</div><h4 class="nome-hab">Direito</h4></div>
+              <div class="card-hab"><div class="icone-circulo">🏛️</div><h4 class="nome-hab">Gestão Pública</h4></div>
             </div>
-    
-            <div id="ferramentas" class="conteudo-aba hidden">
-                <div class="carrossel-pagina" id="ferr-p1">
-                    <div class="card-hab"><i>💻</i> <h4>VS Code</h4> </div>
-                    <div class="card-hab"><i>🚀</i> <h4>Google Colab</h4> </div>
-                    <div class="card-hab"><i>📊</i> <h4>Power BI</h4> </div>
-                </div>
-                <div class="carrossel-pagina hidden" id="ferr-p2">
-                    <div class="card-hab"><i>🐙</i> <h4>Git/GitHub</h4> </div>
-                    <div class="card-hab"><i>📋</i> <h4>Excel/Sheets</h4> </div>
-                </div>
+            <div class="pagina-hab" data-pagina="1">
+              <div class="card-hab"><div class="icone-circulo">🗳️</div><h4 class="nome-hab">Ciências Políticas</h4></div>
+              <div class="card-hab"><div class="icone-circulo">📜</div><h4 class="nome-hab">História</h4></div>
+              <div class="card-hab"><div class="icone-circulo">🔬</div><h4 class="nome-hab">Metodologia</h4></div>
             </div>
-    
-            <div class="controles-setas">
-                <button class="seta-btn" onclick="retrocederPagina()"> &lt; </button>
-                <span class="indicador-ponto active"></span>
-                <span class="indicador-ponto"></span>
-                <button class="seta-btn" onclick="avancarPagina()"> &gt; </button>
+          </div>
+      
+          <!-- ABA: FERRAMENTAS -->
+          <div id="ferramentas" class="conteudo-aba">
+            <div class="pagina-hab ativa" data-pagina="0">
+              <div class="card-hab"><div class="icone-circulo">💻</div><h4 class="nome-hab">VS Code</h4></div>
+              <div class="card-hab"><div class="icone-circulo">🚀</div><h4 class="nome-hab">Google Colab</h4></div>
+              <div class="card-hab"><div class="icone-circulo">📈</div><h4 class="nome-hab">Power BI</h4></div>
             </div>
+            <div class="pagina-hab" data-pagina="1">
+              <div class="card-hab"><div class="icone-circulo">🐙</div><h4 class="nome-hab">Git/GitHub</h4></div>
+              <div class="card-hab"><div class="icone-circulo">📋</div><h4 class="nome-hab">Excel / Sheets</h4></div>
+            </div>
+          </div>
+      
+          <!-- ABA: HABILIDADES INTERPESSOAIS -->
+          <div id="soft" class="conteudo-aba">
+            <div class="pagina-hab ativa" data-pagina="0">
+              <div class="card-hab"><div class="icone-circulo">📢</div><h4 class="nome-hab">Oratória</h4></div>
+              <div class="card-hab"><div class="icone-circulo">✍️</div><h4 class="nome-hab">Escrita Analítica</h4></div>
+              <div class="card-hab"><div class="icone-circulo">🤝</div><h4 class="nome-hab">Negociação</h4></div>
+            </div>
+            <div class="pagina-hab" data-pagina="1">
+              <div class="card-hab"><div class="icone-circulo">🧠</div><h4 class="nome-hab">Disciplina Autodidata</h4></div>
+              <div class="card-hab"><div class="icone-circulo">🌍</div><h4 class="nome-hab">Colaboração Multidisciplinar</h4></div>
+              <div class="card-hab"><div class="icone-circulo">🗣️</div><h4 class="nome-hab">Data Storytelling</h4></div>
+            </div>
+          </div>
+      
+        </div>
+      
+        <!-- CONTROLES DE PAGINAÇÃO -->
+        <div class="paginacao">
+          <button class="btn-seta" onclick="mudarPagina(-1)">❮</button>
+          <div class="pontos">
+            <div class="ponto ativo" id="ponto-0"></div>
+            <div class="ponto" id="ponto-1"></div>
+          </div>
+          <button class="btn-seta" onclick="mudarPagina(1)">❯</button>
         </div>
     </section>
 
@@ -1484,6 +1597,55 @@
             document.getElementById(abaId).classList.remove('hidden');
             document.getElementById(abaId).classList.add('active');
         retrocederPagina(); // Reseta para a primeira página ao mudar de categoria
+        }
+    
+        let paginaAtual = 0;
+      
+        function mudarAba(idAba, elementoBtn) {
+          // Tira cor roxa de todos os botões e esconde abas
+          document.querySelectorAll('.btn-aba').forEach(btn => btn.classList.remove('ativa'));
+          document.querySelectorAll('.conteudo-aba').forEach(aba => aba.classList.remove('ativa'));
+          
+          // Ativa a nova
+          elementoBtn.classList.add('ativa');
+          document.getElementById(idAba).classList.add('ativa');
+          
+          // Reseta para a primeira página
+          paginaAtual = 0;
+          atualizarVisao();
+        }
+      
+        function mudarPagina(direcao) {
+          let abaAtiva = document.querySelector('.conteudo-aba.ativa');
+          let paginas = abaAtiva.querySelectorAll('.pagina-hab');
+          
+          paginaAtual += direcao;
+          if (paginaAtual < 0) paginaAtual = paginas.length - 1;
+          if (paginaAtual >= paginas.length) paginaAtual = 0;
+          
+          atualizarVisao();
+        }
+      
+        function atualizarVisao() {
+          let abaAtiva = document.querySelector('.conteudo-aba.ativa');
+          let paginas = abaAtiva.querySelectorAll('.pagina-hab');
+          
+          paginas.forEach((pag, index) => {
+            if(index === paginaAtual) {
+              pag.classList.add('ativa');
+            } else {
+              pag.classList.remove('ativa');
+            }
+          });
+      
+          // Atualiza os pontinhos
+          document.querySelectorAll('.ponto').forEach((ponto, index) => {
+            if(index === paginaAtual) {
+              ponto.classList.add('ativo');
+            } else {
+              ponto.classList.remove('ativo');
+            }
+          });
         }
     </script>
 </body>
