@@ -53,4 +53,4 @@ O projeto cumpre todos os requisitos de revisão e transparência exigidos:
 ## Contato e Conexões
 
 * **LinkedIn:** [https://www.linkedin.com/in/nicole-viana-cruz-b609ab40b/]
-* **Portfólio Online:** [https://readdy.ai/project/47a87a35-b485-4b36-a932-12d7ef03457a]
+* **Portfólio Online:** [https://nicolecruz06.github.io/PortifolioHUB/]
