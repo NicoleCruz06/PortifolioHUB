@@ -40,9 +40,9 @@
         .btn-github svg { width: 18px; height: 18px; }
 
         header.header-rolou {
-            background-color: #FFCC00; /* O amarelo sutil do seu botão 'Enviar' */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
+            background-color: #FFF5CC; /* Amarelo bem suave e elegante */
+            box-shadow: 0 4px 20px rgba(142, 68, 173, 0.15);
+            transition: all 0.3s ease;
         }
         /* Reset Geral */
         * {
@@ -1149,119 +1149,19 @@
 
     <section id="projetos" class="projetos-container">
         <div style="text-align: left; margin-bottom: 20px;">
-          <span style="background: #f4e8ff; color: #6b21a8; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">PORTFÓLIO</span>
-          <h2 style="font-size: 42px; margin-top: 15px; color: #1a1a1a;">Galeria de <span style="color: #FFB800;">Projetos</span></h2>
-          <p style="color: #666; font-size: 16px; max-width: 600px; margin-top: 10px;">Uma seleção de projetos acadêmicos e profissionais que representam minha trajetória e habilidades técnicas.</p>
+          <span class="badge-comp">PORTFÓLIO</span>
+          <h2 class="hab-titulo">Meus <span>Projetos</span></h2>
+          <p class="hab-sub">Meus repositórios mais recentes, sincronizados automaticamente com o meu GitHub.</p>
         </div>
       
-        <div class="grid-projetos">
-          <!-- Projeto 1 -->
-          <div class="card-projeto">
-            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800');">
-              <span class="badge-ano">2026</span>
-            </div>
-            <div class="projeto-conteudo">
-              <h3 class="projeto-titulo">Análise Exploratória Inicial: Emendas Parlamentares</h3>
-              <p class="projeto-desc">Análise exploratória de dados (EDA) utilizando Python e Pandas para mapear e tratar a distribuição inicial de emendas parlamentares brasileiras.</p>
-              <div class="projeto-tags">
-                <span class="tag-roxa">Python</span> <span class="tag-roxa">Pandas</span> <span class="tag-roxa">Dados Públicos</span>
-              </div>
-              <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/01-analise-exploratoria/EDA_Pandas_Emendas-main/EDA_Pandas_Emendas-main" target="_blank" class="btn-github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
+        <div id="carrossel-projetos">
+            <p style="text-align:center; color:#888;">Carregando projetos do GitHub...</p>
+        </div>
       
-          <!-- Projeto 2 -->
-          <div class="card-projeto">
-            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=800');">
-              <span class="badge-ano">2026</span>
-            </div>
-            <div class="projeto-conteudo">
-              <h3 class="projeto-titulo">Análise Exploratória Aprofundada: Emendas</h3>
-              <p class="projeto-desc">Estudo analítico avançado com manipulação de DataFrames complexos, agrupamentos e agregações estatísticas sobre o orçamento público.</p>
-              <div class="projeto-tags">
-                <span class="tag-roxa">Python</span> <span class="tag-roxa">Pandas</span> <span class="tag-roxa">EDA</span>
-              </div>
-              <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/02-analise-exploratoria/Pandas_exerc-cio2-master/Pandas_exerc-cio2-master" target="_blank" class="btn-github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-      
-          <!-- Projeto 3 -->
-          <div class="card-projeto">
-            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800');">
-              <span class="badge-ano">2026</span>
-            </div>
-            <div class="projeto-conteudo">
-              <h3 class="projeto-titulo">Análise Exploratória do Bolsa Família</h3>
-              <p class="projeto-desc">Investigação de microdados socioeconômicos do programa Bolsa Família focado no impacto regional e na intersecção com políticas públicas.</p>
-              <div class="projeto-tags">
-                <span class="tag-roxa">Python</span> <span class="tag-roxa">Políticas Públicas</span>
-              </div>
-              <a href="https://github.com/NicoleCruz06/Analise_Exploratoria_Dados/tree/main/03-analise-bolsa-familia/EDA_bolsa_familia" target="_blank" class="btn-github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-      
-          <!-- Projeto 4 -->
-          <div class="card-projeto">
-            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800');">
-              <span class="badge-ano">2026</span>
-            </div>
-            <div class="projeto-conteudo">
-              <h3 class="projeto-titulo">Algoritmos de Repetição: Estrutura While</h3>
-              <p class="projeto-desc">Desenvolvimento e resolução de problemas lógicos complexos de automação e validação de dados utilizando loops estruturados.</p>
-              <div class="projeto-tags">
-                <span class="tag-roxa">Python</span> <span class="tag-roxa">Lógica</span>
-              </div>
-              <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/03-exercicios-while/Lista_3" target="_blank" class="btn-github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-      
-          <!-- Projeto 5 -->
-          <div class="card-projeto">
-            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1526379095098-d400fd0bfce8?auto=format&fit=crop&q=80&w=800');">
-              <span class="badge-ano">2026</span>
-            </div>
-            <div class="projeto-conteudo">
-              <h3 class="projeto-titulo">Otimização de Fluxos: Estrutura For</h3>
-              <p class="projeto-desc">Exercícios focados em iteração de sequências, indexação e eficiência de processamento de dados tabulares utilizando comandos For.</p>
-              <div class="projeto-tags">
-                <span class="tag-roxa">Python</span> <span class="tag-roxa">Fundamentos</span>
-              </div>
-              <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/04-exercicios-for/Lista_4" target="_blank" class="btn-github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-      
-          <!-- Projeto 6 -->
-          <div class="card-projeto">
-            <div class="projeto-imagem" style="background-image: url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800');">
-              <span class="badge-ano">2026</span>
-            </div>
-            <div class="projeto-conteudo">
-              <h3 class="projeto-titulo">Manipulação de Estruturas de Dados</h3>
-              <p class="projeto-desc">Implementação prática e organização de dados em estruturas fundamentais do Python como listas, tuplas, dicionários e conjuntos.</p>
-              <div class="projeto-tags">
-                <span class="tag-roxa">Python</span> <span class="tag-roxa">Estruturas</span>
-              </div>
-              <a href="https://github.com/NicoleCruz06/Fundamentos_Python/tree/main/05-exercicios-estruturas-dados/Lista_5" target="_blank" class="btn-github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
+        <div class="paginacao" style="margin-top: 40px;">
+          <button class="btn-seta" onclick="mudarPaginaProjeto(-1)">❮</button>
+          <span id="indicador-pagina-projeto" style="font-weight: 600; color: #555;">Página 1</span>
+          <button class="btn-seta" onclick="mudarPaginaProjeto(1)">❯</button>
         </div>
     </section>
 
@@ -1600,6 +1500,122 @@
         }
     
         let paginaAtual = 0;
+
+        const meuUsuarioGitHub = 'NicoleCruz06'; // Seu @ do GitHub
+
+        // ⚠️ ESCREVA AQUI O NOME EXATO DOS SEUS REPOSITÓRIOS DE TEMAS
+        // Exemplo: se você tem um repo chamado 'ciencia-de-dados' e outro 'web-dev'
+        const meusRepositoriosTemas = ['Analise_Exploratoria_Dados', 'Fundamentos_Python', 'PortifolioHUB']; 
+
+        let meusProjetosGlobais = [];
+        let paginaAtualProjeto = 0;
+        const projetosPorPagina = 6;
+
+        // 1. Entra em cada repositório tema e pega as pastas de dentro dele
+        async function buscarProjetosGitHub() {
+          try {
+              let todosOsProjetos = [];
+
+              // Faz um loop por cada repositório que você listou ali em cima
+              for (const repo do meusRepositoriosTemas) {
+                  const resposta = await fetch(`https://api.github.com/repos/${meuUsuarioGitHub}/${repo}/contents`);
+            
+                  if (!resposta.ok) continue; // Se der erro em algum, pula pro próximo
+            
+                  const conteudos = await resposta.json();
+
+                  // Filtra para pegar APENAS o que for PASTA ('dir'). Ignora arquivos soltos como README ou .gitignore
+                  const pastas = conteudos.filter(item => item.type === 'dir');
+
+                 // Formata cada pasta para virar um projeto no nosso padrão
+                 pastas.forEach(pasta => {
+                     todosOsProjetos.push({
+                         nome: pasta.name,
+                         url: pasta.html_url, // Link direto para a pasta no GitHub
+                         repositorioPai: repo
+                     });
+                 });
+             }
+
+        // Salva todos os projetos encontrados na nossa variável global
+        meusProjetosGlobais = todosOsProjetos;
+        
+        // Manda desenhar na tela
+        desenharProjetosNaTela();
+
+    } catch (erro) {
+        console.error("Erro ao buscar pastas no GitHub:", erro);
+        document.getElementById('carrossel-projetos').innerHTML = "<p>Poxa, não consegui carregar os projetos agora.</p>";
+    }
+}
+
+// 2. Desenha os cartões na tela (6 por vez)
+function desenharProjetosNaTela() {
+    const container = document.getElementById('carrossel-projetos');
+    container.innerHTML = ''; 
+
+    const inicio = paginaAtualProjeto * projetosPorPagina;
+    const fim = inicio + projetosPorPagina;
+    const projetosDestaPagina = meusProjetosGlobais.slice(inicio, fim);
+
+    if (projetosDestaPagina.length === 0) {
+        container.innerHTML = "<p style='text-align:center; color:#888;'>Nenhum projeto encontrado. Verifique se os nomes dos repositórios estão certos!</p>";
+        return;
+    }
+
+    const grade = document.createElement('div');
+    grade.className = 'grid-projetos'; 
+
+    projetosDestaPagina.forEach(projeto => {
+        // Deixa o nome da pasta bonito (tira traços e deixa maiúsculo)
+        const nomeFormatado = projeto.nome.replace(/[-_]/g, ' ');
+        
+        // Identifica o tema baseado no repositório pai para criar a tag
+        const tagTema = `<span class="tag-roxa">${projeto.repositorioPai.replace(/[-_]/g, ' ')}</span>`;
+
+        const cartaoHTML = `
+            <div class="card-projeto">
+              <div class="projeto-imagem" style="background-color: #f4e8ff; display: flex; align-items: center; justify-content: center; height: 180px; padding: 20px; text-align: center; position: relative;">
+                <h3 style="color: #6b21a8; font-size: 20px; font-weight: 800; text-transform: uppercase;">${nomeFormatado}</h3>
+              </div>
+              
+              <div class="projeto-conteudo">
+                <h3 class="projeto-titulo" style="font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${nomeFormatado}</h3>
+                <p class="projeto-desc" style="height: 65px; overflow: hidden; font-size: 14px; margin-bottom: 15px; color: #555;">
+                    Projeto integrante do repositório ${projeto.repositorioPai}. Abra para conferir os códigos e análises completas.
+                </p>
+                <div class="projeto-tags" style="margin-bottom: 20px;">${tagTema}</div>
+                
+                <a href="${projeto.url}" target="_blank" class="btn-github">
+                  <svg viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px;"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                  Ver Pasta do Projeto
+                </a>
+              </div>
+            </div>
+        `;
+        grade.innerHTML += cartaoHTML;
+    });
+
+    container.appendChild(grade);
+
+    // Atualiza as setinhas e contagem
+    const totalPaginas = Math.ceil(meusProjetosGlobais.length / projetosPorPagina);
+    document.getElementById('indicador-pagina-projeto').innerText = `Página ${paginaAtualProjeto + 1} de ${totalPaginas || 1}`;
+}
+
+// 3. Controla o clique das setinhas
+function mudarPaginaProjeto(direcao) {
+    const totalPaginas = Math.ceil(meusProjetosGlobais.length / projetosPorPagina);
+    if (totalPaginas <= 1) return;
+
+    paginaAtualProjeto += direcao;
+    if (paginaAtualProjeto < 0) paginaAtualProjeto = totalPaginas - 1;
+    if (paginaAtualProjeto >= totalPaginas) paginaAtualProjeto = 0;
+
+    desenharProjetosNaTela();
+}
+
+document.addEventListener('DOMContentLoaded', buscarProjetosGitHub);
       
         function mudarAba(idAba, elementoBtn) {
           // Tira cor roxa de todos os botões e esconde abas
