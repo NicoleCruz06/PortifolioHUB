@@ -1414,29 +1414,39 @@
 
         let currentPosition = 0;
 
-        function switchTab(category) {
-            // Atualizar classes dos botões das abas
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        function mudarAba(category, button) {
+            // 1. Atualizar classes dos botões das abas (remover de todos e colocar no que foi clicado)
+            const buttons = document.querySelectorAll('.btn-aba');
+            buttons.forEach(btn => btn.classList.remove('ativa'));
+            button.classList.add('ativa'); 
 
-            // Renderizar novos cards com efeito visual limpo
-            const slider = document.getElementById('skillsSlider');
-            slider.innerHTML = '';
-            
-            skillsData[category].forEach(skill => {
-                const card = document.createElement('div');
-                card.className = 'skill-card';
-                card.innerHTML = `
-                    <div class="skill-icon-box">${skill.icon}</div>
-                    <h4>${skill.title}</h4>
-                `;
-                slider.appendChild(card);
-            });
-            
-            currentPosition = 0;
-            slider.style.transform = `translateX(0px)`;
-            updateDots();
+            // 2. Esconder todas as abas de conteúdo
+            const abas = document.querySelectorAll('.conteudo-aba');
+            abas.forEach(aba => aba.classList.remove('ativa'));
+
+            // 3. Mostrar a aba correta baseada no ID (dados, politicas, ferramentas, soft)
+            const abaAlvo = document.getElementById(category);
+            if (abaAlvo) {
+                abaAlvo.classList.add('ativa');
+        
+                // 4. Resetar o carrossel de páginas para a primeira página da aba que abriu
+                // Primeiro, remove o "ativa" de qualquer página que estivesse aberta
+                const todasPaginas = document.querySelectorAll('.pagina-hab');
+                todasPaginas.forEach(p => p.classList.remove('ativa'));
+        
+                const todosPontos = document.querySelectorAll('.pontos .ponto');
+                todosPontos.forEach(p => p.classList.remove('ativa'));
+
+                // Agora, ativa a primeira página e o primeiro ponto dessa nova aba
+                const primeiraPagina = abaAlvo.querySelector('.pagina-hab');
+                if (primeiraPagina) primeiraPagina.classList.add('ativa');
+        
+                const primeiroPonto = document.getElementById('ponto-0');
+                if (primeiroPonto) primeiroPonto.classList.add('ativa');
+        
+                // Zera o contador global da página
+                paginaAtualHab = 0;
+            }
         }
 
         // Funções simples para navegação do carrossel de habilidades
@@ -1692,7 +1702,7 @@ document.addEventListener('DOMContentLoaded', buscarProjetosGitHub);
          // 5. Adiciona a classe 'ativa' na nova página e no novo ponto
          paginas[paginaAtualHab]?.classList.add('ativa');
          pontos[paginaAtualHab]?.classList.add('ativa');
-         }
+        }
     </script>
 </body>
 </html>
