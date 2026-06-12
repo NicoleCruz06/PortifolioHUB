@@ -25,7 +25,7 @@
             --border-radius: 16px;
         }
         .projetos-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; font-family: 'Inter', sans-serif; }
-        .grid-projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        .grid-projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); justify-content: center; gap: 30px; margin-top: 40px; }
         .card-projeto { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #f0f0f0; }
         .card-projeto:hover { transform: translateY(-5px); }
         .projeto-imagem { height: 200px; background-color: #f3ebfc; position: relative; background-size: cover; background-position: center; }
@@ -1082,7 +1082,10 @@
                 <a href="#contato" class="btn-secondary">Entrar em Contato</a>
             </div>
             <div class="perfil-quick-contact">
-                <span>✉️ nicoleviana.cruz@gmail.com</span>
+                <!-- O texto do e-mail foi removido. Agora é um link interno seguro para o formulário no rodapé -->
+                <a href="#contato" onclick="event.preventDefault(); document.querySelector('iframe[src*=\'docs.google.com/forms\']').scrollIntoView({ behavior: 'smooth', block: 'center' });" style="text-decoration: none; color: inherit; margin-right: 15px;">
+                    ✉️ Contacto Seguro
+                </a>
                 <a href="https://www.linkedin.com/in/nicole-viana-cruz-b609ab40b/" target="_blank">in LinkedIn</a>
             </div>
         </div>
@@ -1447,7 +1450,6 @@
             <div class="footer-contact">
                 <h4>Contato</h4>
                 <div class="footer-contact-list">
-                    <div class="contact-item">📧 nicoleviana.cruz@gmail.com</div>
                     <div class="contact-item">🔗 linkedin.com/in/nicole-viana-cruz</div>
                     <div class="contact-item">📂 github.com/NicoleCruz06</div>
                     <div class="contact-item">📍 Brasília, Brasil</div>
@@ -1455,11 +1457,33 @@
             </div>
         </div>
 
+        <!-- =======================================================
+             📬 INTEGRAÇÃO WORKSPACE: GOOGLE FORMS RESPONSIVO
+             ======================================================= -->
+        <div style="width: 100%; max-width: 640px; margin: 30px auto; padding: 0 15px; box-sizing: border-box;">
+            <p style="color: #ccc; font-size: 14px; text-align: center; margin-bottom: 15px;">
+                🔒 <strong>Canal de Contacto Seguro & Feedback:</strong> Envie propostas de recrutamento ou avalie a usabilidade do site através do formulário criptografado via Google Workspace.
+            </p>
+            <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid #8a2be2; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.15);">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSflpHXVD1kLTXbeKdqoA82J1UqLVEM_9Mw4l9QzwoOGxeQyhA/viewform?embedded=true" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        style="display: block; background: #ffffff;">
+                    Carregando…
+                </iframe>
+            </div>
+        </div>
+        <!-- ======================================================= -->
+
         <div class="footer-bottom">
             <div>&copy; 2026 Nicole Viana Cruz. Todos os direitos reservados.</div>
             <div class="footer-bottom-links">
                 <a href="https://www.linkedin.com/in/nicole-viana-cruz-b609ab40b/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/NicoleCruz06" target="_blank">GitHub</a>
+                <!-- NOTA: O link abaixo foi mantido por conveniência, mas os robôs de texto comuns não capturam e-mails escondidos apenas dentro do href da mesma forma que capturam no texto limpo da tela -->
                 <a href="mailto:nicoleviana.cruz@gmail.com">Email</a>
                 <span style="margin-left: 20px;"><a href="#">Privacidade</a> | <a href="#">Termos</a></span>
             </div>
@@ -1706,6 +1730,11 @@ function mudarPaginaProjeto(direcao) {
     if (paginaAtualProjeto >= totalPaginas) paginaAtualProjeto = 0;
 
     desenharProjetosNaTela();
+
+    document.getElementById('projetos').scrollIntoView({ 
+    behavior: 'smooth', // Faz a rolagem ser suave e bonita, sem dar um tranco na tela
+    block: 'start'      // Alinha o topo da seção de projetos com o topo da tela
+});
 }
 
 document.addEventListener('DOMContentLoaded', buscarProjetosGitHub);
