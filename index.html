@@ -970,9 +970,88 @@
                 display: none; /* Em projetos de produção, criaríamos um menu hambúrguer */
             }
         }
+
+        /* Estilos para o Modal de Autenticação Segura */
+        .modal-seguranca {
+            display: none; /* Começa escondido */
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
+            backdrop-filter: blur(5px); /* Efeito borrado chique */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .modal-conteudo {
+            background-color: #1e1e2f; /* Fundo escuro combinando com o tema */
+            color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #8a2be2; /* Borda roxa tecnológica */
+            width: 90%; max-width: 400px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-conteudo h3 {
+            margin-bottom: 20px;
+            color: #ffca28; /* Amarelo ouro para destaque */
+        }
+
+        .modal-conteudo input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background-color: #2d2d44;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .btn-login-enviar {
+            background: linear-gradient(45deg, #8a2be2, #4a00e0);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-login-enviar:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .fechar-modal {
+            margin-top: 10px;
+            color: #aaa;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+    
+    <div id="modal-login" class="modal-seguranca">
+        <div class="modal-conteudo">
+            <h3>🔐 Autenticação Restrita</h3>
+            <p style="font-size: 13px; color: #ccc; margin-bottom: 15px;">Acesso administrativo protegido por SHA-256</p>
+            
+            <input type="text" id="input-usuario" placeholder="Utilizador (Admin)">
+            <input type="password" id="input-senha" placeholder="Palavra-passe">
+            
+            <button class="btn-login-enviar" onclick="efetuarLogin()">Validar Credenciais</button>
+            <span class="fechar-modal" onclick="fecharModalLogin()">Cancelar</span>
+        </div>
+    </div>
 
     <header>
         <div class="nav-container">
@@ -1385,6 +1464,10 @@
                 <span style="margin-left: 20px;"><a href="#">Privacidade</a> | <a href="#">Termos</a></span>
             </div>
         </div>
+
+        <button onclick="abrirModalLogin()" style="background: none; border: 1px solid #8a2be2; color: white; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 12px; margin-top: 10px;">
+          Área Restrita 🔐
+        </button>
     </footer>
 
     <script>
