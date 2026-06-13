@@ -39,6 +39,77 @@
         .btn-github:hover { background: #f9f9f9; border-color: #d1d1d1; }
         .btn-github svg { width: 18px; height: 18px; }
 
+        /* Estilização do Banner LGPD - Design Sóbrio e Moderno */
+        .lgpd-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 800px;
+            background-color: rgba(20, 24, 33, 0.95); /* Fundo escuro tecnológico com leve transparência */
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            z-index: 99999; /* Garante que fique acima de tudo */
+            transition: all 0.5s ease-in-out;
+        }
+
+        .lgpd-container.hidden {
+            opacity: 0;
+            transform: translate(-50%, 100px);
+            pointer-events: none;
+        }
+
+        .lgpd-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .lgpd-content p {
+            color: #c9d1d9; /* Cor cinza clara de texto de TI */
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+
+        .lgpd-btn {
+            background-color: #238636; /* Verde padrão GitHub para ações positivas */
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .lgpd-btn:hover {
+            background-color: #2ea043; /* Verde brilhante no hover */
+        }
+
+        /* Ajuste responsivo para telas maiores (computadores) */
+        @media (min-width: 768px) {
+            .lgpd-content {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-between;
+            }
+            .lgpd-content p {
+                max-width: 80%;
+            }
+            .lgpd-btn {
+                width: auto;
+                white-space: nowrap;
+            }
+        }
+        
         header.header-rolou {
             background-color: #FFF5CC; /* Amarelo bem suave e elegante */
             box-shadow: 0 4px 20px rgba(142, 68, 173, 0.15);
@@ -1053,6 +1124,18 @@
         </div>
     </div>
 
+    <!-- ================================================================= -->
+    <!-- BANNER DE CONFORMIDADE COM A LGPD & COOKIES                       -->
+    <!-- ================================================================= -->
+    <div id="lgpd-banner" class="lgpd-container hidden">
+        <div class="lgpd-content">
+            <p>
+            Análise de Dados & Privacidade: Este site utiliza cookies e integrações com o Google Workspace para coletar as informações de contato e usabilidade que você fornece voluntariamente no nosso formulário, em conformidade com a Lei Geral de Proteção de Dados (LGPD). Ao continuar, você consente com esta coleta para fins de recrutamento e auditoria acadêmica.
+            </p>
+            <button id="btn-accept-lgpd" class="lgpd-btn">Aceitar e Continuar</button>
+        </div>
+    </div>
+
     <header>
         <div class="nav-container">
             <div class="logo">NC<span>.</span></div>
@@ -1851,6 +1934,28 @@ document.addEventListener('DOMContentLoaded', buscarProjetosGitHub);
         function fecharModalLogin() {
             document.getElementById('modal-login').style.display = 'none';
         }
+    
+        // Lógica de Persistência do Consentimento LGPD
+        document.addEventListener("DOMContentLoaded", function () {
+            const lgpdBanner = document.getElementById("lgpd-banner");
+            const btnAccept = document.getElementById("btn-accept-lgpd");
+
+            // Verifica se o usuário já aceitou os termos anteriormente
+            if (!localStorage.getItem("lgpd-consent-portfolio")) {
+                // Se não aceitou, remove a classe hidden após 1.5 segundos para o banner aparecer com efeito fluido
+                setTimeout(() => {
+                    lgpdBanner.classList.remove("hidden");
+                }, 1500);
+            }
+
+        // Evento de clique no botão de aceite
+        btnAccept.addEventListener("click", function () {
+            // Grava o consentimento no navegador do usuário para não incomodar mais
+            localStorage.setItem("lgpd-consent-portfolio", "true");
+            // Oculta o banner com efeito visual
+            lgpdBanner.classList.add("hidden");
+        });
+    });
     </script>
 </body>
 </html>
